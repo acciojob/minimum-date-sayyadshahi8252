@@ -1,6 +1,17 @@
 function minDate(dates) {
   //write you code here
+
+  let min = new Date(dates[0]);  
+  
+  for (let i = 1; i < dates.length; i++) {
+    let current = new Date(dates[i]);
+    if (current < min) {
+      min = current;
+    }
+  }
+  return dates.find(d => new Date(d).getTime() === min.getTime());
 }
+
 
 // Do not change the code
 
